@@ -50,10 +50,6 @@ const colorMode = useColorMode();
 
 const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ? 'dark' : 'light'))
 
-
-const layer = ref('sample4')
-
-
 </script>
 
 <template>
@@ -65,7 +61,7 @@ const layer = ref('sample4')
     <div class="w-1/2 h-full flex justify-start items-center">
       <!--------------------#region Navigation Logo-------------------->
       <nuxt-link to="/">
-        <img src="/img/logo.png" alt="logo" class="w-16 h-full object-contain">
+        <img :src="(colorMode.value == 'light') ? '/img/logo.png' :  '/img/logo1.png'" alt="logo" class="w-16 h-16 object-contain">
       </nuxt-link>
       <!--------------------#endregion-------------------->
       <!--------------------#region Navigation Items-------------------->
@@ -92,7 +88,7 @@ const layer = ref('sample4')
         <div class="bg-[#F7D904] rounded-full w-8 h-8 flex justify-center items-center">
           <icon name="ic:baseline-search"  style="color: black" class="mx-1" />
         </div>
-        <input type="text" placeholder="جستجو کنید..." class="bg-white w-full rounded-full dir-rtl px-2 placeholder-black">
+        <input type="text" placeholder="جستجو کنید..." class="bg-[#D9D9D9] w-full rounded-full dir-rtl px-2 placeholder-black">
       </div>
       <!--------------------#endregion-------------------->
       <!--------------------#region Navigation Icons Box-------------------->
@@ -125,8 +121,9 @@ const layer = ref('sample4')
       <!--------------------#endregion-------------------->
     </div>
     <!--------------------#region Menu Bar-------------------->
-    <div class="w-1/2 h-full flex justify-end items-center" @click="isMobileMenuOpen = true">
-      <icon name="pajamas:hamburger" size="30" class="mx-1 text-black dark:text-white" />
+    <div class="w-1/2 h-full flex justify-end items-center">
+      <icon name="pajamas:hamburger" size="30" class="mx-1 text-black dark:text-white"
+            @click="isMobileMenuOpen = true" />
     </div>
     <!--------------------#endregion-------------------->
    <!--------------------#endregion-------------------->
@@ -135,30 +132,64 @@ const layer = ref('sample4')
 
   <!--------------------#region Menu Bar Inside-------------------->
   <div class="w-1/2 h-full flex justify-start dir-ltr">
-    <!--------------------#region Menu Bar Inside/Language Piker------------------
-    <div class="bg-[#F7D904] rounded-full w-8 h-8 flex justify-center items-center">
-      <span>FA</span>
-    </div>
-    ------------------#endregion------------------
-   ------------------#region Menu Bar Inside/Search Input------------------
-    <div class="bg-[#D9D9D9] w-48 h-full ml-5 flex rounded-full">
-      <div class="bg-[#F7D904] rounded-full w-8 h-8 flex justify-center items-center">
-        <icon name="ic:baseline-search"  style="color: black" class="mx-1" />
-      </div>
-      <input type="text" placeholder="جستجو کنید..." class="bg-[#D9D9D9] w-full rounded-full dir-rtl px-2 placeholder-black">
-    </div>
-    ------------------#endregion-------------------->
     <!--------------------#region Menu Bar Inside/Items-------------------->
-    <div class="w-[80vw] h-screen top-0 flex flex-col fixed z-50 bg-slate-200 dark:bg-slate-800 p-3 anim" :class="(isMobileMenuOpen) ? 'left-0' : '-left-[80vw]' ">
+    <div class="w-[80vw] h-screen top-0 flex flex-col fixed z-50 dark:bg-[#373737] bg-[#BCBCBC] p-3 anim" :class="(isMobileMenuOpen) ? 'left-0' : '-left-[80vw]' ">
+      <!--------------------#region Menu Bar Inside/Top-------------------->
+      <div class="flex justify-between items-center text-center text-black dark:text-whit">
       <!--------------------#region Menu Bar Inside/Closing Icon-------------------->
-      <icon name="clarity:close-line" size="30" class="mx-1 text-black dark:text-white" @click="isMobileMenuOpen = false" />
+      <icon name="clarity:close-line" size="30" class="m-3 flex justify-center items-center text-black dark:text-white" @click="isMobileMenuOpen = false" />
+      <!------------------#endregion------------------>
+        <!--------------------#region Menu Bar Inside/Top-------------------->
+          <div class="text-black dark:text-white">
+              تجارت الکترونیک 20 آفاق ایرانیان
+          </div>
+        <!------------------#endregion------------------>
+      </div>
+      <!------------------#endregion------------------>
+      <!--------------------#region Menu Bar Inside/hr line-------------------->
+      <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
+      <!------------------#endregion------------------>
+      <!--------------------#region Navigation Search Input-------------------->
+      <div class="bg-[#D9D9D9] mt-10 flex rounded-full">
+        <div class="bg-[#F7D904] rounded-full w-8 h-8 flex justify-center items-center">
+          <icon name="ic:baseline-search"  style="color: black" class="mx-1" />
+        </div>
+        <input type="text" placeholder="جستجو کنید..." class="bg-[#D9D9D9] w-full rounded-full dir-rtl px-2 placeholder-black">
+      </div>
+      <!--------------------#endregion-------------------->
+      <!--------------------#region Menu Bar Inside/hr line-------------------->
+      <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
+      <!------------------#endregion------------------>
+      <!--------------------#region Navigation Icons Box-------------------->
+      <div class="p-2 w-full mt-10 flex justify-around items-center rounded-full bg-black dark:bg-white ">
+        <icon :name="(colorMode.value == 'dark') ? 'ph:moon-stars-fill' : 'ph:sun-fill' "  @click="changeColor" class="mx-1 hover-anim-l text:text-steel-800 dark:white" />
+        <icon name="ph:music-notes-fill"  class="mx-1 hover-anim-l "  />
+        <icon name="ph:lightbulb-fill" class="mx-1 hover-anim-l    " />
+        <icon name="mage:whatsapp-filled" class="mx-1 hover-anim-l " />
+        <icon name="ic:outline-telegram"  class="mx-1 hover-anim-l " />
+      </div>
+      <!--------------------#endregion-------------------->
+      <!--------------------#region Menu Bar Inside/hr line-------------------->
+      <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
       <!------------------#endregion------------------>
       <!--------------------#region Menu Bar Inside/Navigation Items-------------------->
-      <div class="w-full grid grid-cols-1 gap-5 mt-10 Estedad_FD_Bold  text-black dark:text-white">
+      <div class="w-full grid grid-cols-1 gap-5 mt-10 Estedad_FD_Bold text-center text-black dark:text-white">
       <nuxt-link to="/" class="cursor-pointer hover-anim-d">  خانه  </nuxt-link>
+        <!--------------------#region Menu Bar Inside/hr line-------------------->
+        <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
+        <!------------------#endregion------------------>
       <nuxt-link to="/" class="cursor-pointer hover-anim-d">  بازرگانان خارجی  </nuxt-link>
+        <!--------------------#region Menu Bar Inside/hr line-------------------->
+        <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
+        <!------------------#endregion------------------>
       <nuxt-link to="/" class="cursor-pointer hover-anim-d">  ارتباط با ما  </nuxt-link>
+        <!--------------------#region Menu Bar Inside/hr line-------------------->
+        <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
+        <!------------------#endregion------------------>
       <nuxt-link to="/" class="cursor-pointer hover-anim-d">  درباره ما  </nuxt-link>
+        <!--------------------#region Menu Bar Inside/hr line-------------------->
+        <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
+        <!------------------#endregion------------------>
       </div>
     <!------------------#endregion------------------>
     </div>
@@ -207,12 +238,15 @@ const layer = ref('sample4')
         <!--------------------#region Black Box Bottom Button-------------------->
         <a href="https://v2.20visions.ir/" target="_blank" class="w-full flex justify-center ">
           <div class="bg-white text-black dark:text-white dark:bg-[#1E1E1E] w-auto rounded-full px-3 py-2 text-xl flex text-center justify-center items-center transition-all duration-300 hover:-translate-y-4">
-            <Icon name="tabler:dots" class="text-black dark:text-white" />
-          <span class="mx-3">
+            <Icon name="entypo:dot-single" width="24" height="24" class="text-black dark:text-white"/>
+            <Icon name="radix-icons:dot-filled" width="24" height="24" class="text-black dark:text-white"/>
+            <Icon name="oui:dot" width="24" height="24" class="text-black dark:text-white" />
+            <span class="mx-3">
               پنل کاربری
           </span>
-            <Icon name="tabler:dots" class="text-black dark:text-white" />
-          </div>
+            <Icon name="oui:dot" width="24" height="24" class="text-black dark:text-white" />
+            <Icon name="radix-icons:dot-filled" width="24" height="24" class="text-black dark:text-white"/>
+            <Icon name="entypo:dot-single" width="24" height="24" class="text-black dark:text-white"/>          </div>
         </a>
         <!--------------------#endregion-------------------->
       </div>
@@ -227,8 +261,8 @@ const layer = ref('sample4')
         <img src="/img/sample1.jpg" alt="sample1" class="w-full h-full object-cover rounded-3xl">
         <!--#endregion-->
         <!--#region top black and white button-->
-        <div class="bg-black rounded-full sm:w-12 w-8 h-8 flex justify-center items-center absolute top-5 left-5">
-          <div class="bg-white rounded-full sm:w-6 w-6 h-6  animate-pulse"></div>
+        <div class="bg-black rounded-full w-10 h-8 flex justify-center items-center absolute top-5 left-5">
+          <div class="bg-white rounded-full sm:w-6 w-6 h-6 animate-pulse"></div>
         </div>
         <!--#endregion-->
         <!--#region bottom pause button-->
@@ -270,8 +304,7 @@ const layer = ref('sample4')
         <!--------------------#endregion-------------------->
         <!--------------------#region Chart Box-------------------->
         <div class="bg-white rounded-3xl w-1/3 h-full">
-          <img v-if="layer=='sample4'"  alt="sample4" src="/img/sample4.jpg" class="w-full h-full object-contain rounded-3xl">
-          <img v-if="layer=='sample10'"  alt="sample10" src="/img/sample10.png"  class="w-full h-full object-contain rounded-3xl">
+          <img alt="sample4" src="/img/sample4.jpg" class="w-full h-full object-contain rounded-3xl">
         </div>
         <!--------------------#endregion-------------------->
       </div>
