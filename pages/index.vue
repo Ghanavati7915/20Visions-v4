@@ -28,9 +28,10 @@ const updateTime = () => {
   time.value = `${hours}:${minutes}:${seconds}`;
 };
 
+//#endregion
+
 const isMobileMenuOpen = ref<boolean>(false);
 
-//#endregion
 
 //#region Constructors
 onMounted(async () => {
@@ -104,8 +105,8 @@ const layer = ref('sample4')
       </div>
       <!--------------------#endregion-------------------->
       <!--------------------#region Navigation Weather Box-------------------->
-      <div class="bg-black rounded-full w-8 h-8 ml-5 flex justify-center items-center">
-        <icon name="fluent:weather-partly-cloudy-day-48-filled"  style="color: white" class="mx-1" />
+      <div class="bg-black dark:bg-white rounded-full w-8 h-8 ml-5 flex justify-center items-center ">
+        <icon name="fluent:weather-partly-cloudy-day-48-filled" :style="`color:${(colorMode.value == 'light') ? 'white' : 'black'}`" class="mx-1" />
       </div>
       <!--------------------#endregion-------------------->
     </div>
