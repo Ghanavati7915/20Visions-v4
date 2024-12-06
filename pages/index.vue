@@ -61,7 +61,7 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
     <div class="w-1/2 h-full flex justify-start items-center">
       <!--------------------#region Navigation Logo-------------------->
       <nuxt-link to="/">
-        <img :src="(colorMode.value == 'light') ? '/img/logo.png' :  '/img/logo1.png'" alt="logo" class="w-16 h-16 object-contain">
+        <img :src="(colorMode.value == 'dark') ? '/img/logo.png' :  '/img/logo123.png'" alt="logo" class="w-16 h-16 object-contain">
       </nuxt-link>
       <!--------------------#endregion-------------------->
       <!--------------------#region Navigation Items-------------------->
@@ -115,8 +115,8 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
     <!--------------------#region Navigation-------------------->
     <div class="w-1/2 h-full flex justify-start items-center">
       <!--------------------#region Logo-------------------->
-      <nuxt-link to="/" class="h-full">
-        <img src="/img/logo.png" alt="logo" class="w-16 h-full object-contain">
+      <nuxt-link to="/">
+        <img :src="(colorMode.value == 'dark') ? '/img/logo.png' :  '/img/logo123.png'" alt="logo" class="w-16 h-16 object-contain">
       </nuxt-link>
       <!--------------------#endregion-------------------->
     </div>
@@ -147,7 +147,7 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
       </div>
       <!------------------#endregion------------------>
       <!--------------------#region Menu Bar Inside/hr line-------------------->
-      <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
+      <hr class="h-px my-3 border-[#444] border-1 dark:border-[#aaa]">
       <!------------------#endregion------------------>
       <!--------------------#region Navigation Search Input-------------------->
       <div class="bg-[#D9D9D9] mt-10 flex rounded-full">
@@ -157,11 +157,8 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
         <input type="text" placeholder="جستجو کنید..." class="bg-[#D9D9D9] w-full rounded-full dir-rtl px-2 placeholder-black">
       </div>
       <!--------------------#endregion-------------------->
-      <!--------------------#region Menu Bar Inside/hr line-------------------->
-      <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
-      <!------------------#endregion------------------>
       <!--------------------#region Navigation Icons Box-------------------->
-      <div class="p-2 w-full mt-10 flex justify-around items-center rounded-full bg-black dark:bg-white ">
+      <div class="p-2 w-full my-10 flex justify-around items-center rounded-full bg-black dark:bg-white ">
         <icon :name="(colorMode.value == 'dark') ? 'ph:moon-stars-fill' : 'ph:sun-fill' "  @click="changeColor" class="mx-1 hover-anim-l text:text-steel-800 dark:white" />
         <icon name="ph:music-notes-fill"  class="mx-1 hover-anim-l "  />
         <icon name="ph:lightbulb-fill" class="mx-1 hover-anim-l    " />
@@ -170,26 +167,14 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
       </div>
       <!--------------------#endregion-------------------->
       <!--------------------#region Menu Bar Inside/hr line-------------------->
-      <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
+      <hr class="h-px my-3 border-[#444] border-1 dark:border-[#aaa]">
       <!------------------#endregion------------------>
       <!--------------------#region Menu Bar Inside/Navigation Items-------------------->
       <div class="w-full grid grid-cols-1 gap-5 mt-10 Estedad_FD_Bold text-center text-black dark:text-white">
       <nuxt-link to="/" class="cursor-pointer hover-anim-d">  خانه  </nuxt-link>
-        <!--------------------#region Menu Bar Inside/hr line-------------------->
-        <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
-        <!------------------#endregion------------------>
       <nuxt-link to="/" class="cursor-pointer hover-anim-d">  بازرگانان خارجی  </nuxt-link>
-        <!--------------------#region Menu Bar Inside/hr line-------------------->
-        <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
-        <!------------------#endregion------------------>
       <nuxt-link to="/" class="cursor-pointer hover-anim-d">  ارتباط با ما  </nuxt-link>
-        <!--------------------#region Menu Bar Inside/hr line-------------------->
-        <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
-        <!------------------#endregion------------------>
       <nuxt-link to="/" class="cursor-pointer hover-anim-d">  درباره ما  </nuxt-link>
-        <!--------------------#region Menu Bar Inside/hr line-------------------->
-        <hr class="h-px my-8 border-[#444] border-2 dark:border-[#aaa]">
-        <!------------------#endregion------------------>
       </div>
     <!------------------#endregion------------------>
     </div>
