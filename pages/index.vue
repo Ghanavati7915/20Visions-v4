@@ -92,7 +92,7 @@ const layer = ref('sample4')
         <div class="bg-[#F7D904] rounded-full w-8 h-8 flex justify-center items-center">
           <icon name="ic:baseline-search"  style="color: black" class="mx-1" />
         </div>
-        <input type="text" placeholder="جستجو کنید..." class="bg-[#D9D9D9] w-full rounded-full dir-rtl px-2 placeholder-black">
+        <input type="text" placeholder="جستجو کنید..." class="bg-white w-full rounded-full dir-rtl px-2 placeholder-black">
       </div>
       <!--------------------#endregion-------------------->
       <!--------------------#region Navigation Icons Box-------------------->
