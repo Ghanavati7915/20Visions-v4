@@ -61,7 +61,7 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
     <div class="w-1/2 h-full flex justify-start items-center">
       <!--------------------#region Navigation Logo-------------------->
       <nuxt-link to="/">
-        <img :src="(colorMode.value == 'dark') ? '/img/logo.png' :  '/img/logo123.png'" alt="logo" class="w-16 h-16 object-contain">
+        <img :src="(colorMode.value == 'dark') ? '/img/logo123.png' :  '/img/logo.png'" alt="logo" class="w-16 h-16 object-contain">
       </nuxt-link>
       <!--------------------#endregion-------------------->
       <!--------------------#region Navigation Items-------------------->
@@ -116,7 +116,7 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
     <div class="w-1/2 h-full flex justify-start items-center">
       <!--------------------#region Logo-------------------->
       <nuxt-link to="/">
-        <img :src="(colorMode.value == 'dark') ? '/img/logo.png' :  '/img/logo123.png'" alt="logo" class="w-16 h-16 object-contain">
+        <img :src="(colorMode.value == 'dark') ? '/img/logo123.png' :  '/img/logo.png'" alt="logo" class="w-16 h-16 object-contain">
       </nuxt-link>
       <!--------------------#endregion-------------------->
     </div>
@@ -146,11 +146,8 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
         <!------------------#endregion------------------>
       </div>
       <!------------------#endregion------------------>
-      <!--------------------#region Menu Bar Inside/hr line-------------------->
-      <hr class="h-px my-3 border-[#444] border-1 dark:border-[#aaa]">
-      <!------------------#endregion------------------>
       <!--------------------#region Navigation Search Input-------------------->
-      <div class="bg-[#D9D9D9] mt-10 flex rounded-full">
+      <div class="bg-[#D9D9D9] mt-3 flex rounded-full">
         <div class="bg-[#F7D904] rounded-full w-8 h-8 flex justify-center items-center">
           <icon name="ic:baseline-search"  style="color: black" class="mx-1" />
         </div>
@@ -158,7 +155,7 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
       </div>
       <!--------------------#endregion-------------------->
       <!--------------------#region Navigation Icons Box-------------------->
-      <div class="p-2 w-full my-10 flex justify-around items-center rounded-full bg-black dark:bg-white ">
+      <div class="p-2 w-full mt-4 flex justify-around items-center rounded-full bg-black dark:bg-white ">
         <icon :name="(colorMode.value == 'dark') ? 'ph:moon-stars-fill' : 'ph:sun-fill' "  @click="changeColor" class="mx-1 hover-anim-l text:text-steel-800 dark:white" />
         <icon name="ph:music-notes-fill"  class="mx-1 hover-anim-l "  />
         <icon name="ph:lightbulb-fill" class="mx-1 hover-anim-l    " />
@@ -166,11 +163,9 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
         <icon name="ic:outline-telegram"  class="mx-1 hover-anim-l " />
       </div>
       <!--------------------#endregion-------------------->
-      <!--------------------#region Menu Bar Inside/hr line-------------------->
-      <hr class="h-px my-3 border-[#444] border-1 dark:border-[#aaa]">
-      <!------------------#endregion------------------>
+
       <!--------------------#region Menu Bar Inside/Navigation Items-------------------->
-      <div class="w-full grid grid-cols-1 gap-5 mt-10 Estedad_FD_Bold text-center text-black dark:text-white">
+      <div class="w-full grid grid-cols-1 gap-8 mt-10 Estedad_FD_Bold text-right px-5 text-black dark:text-white">
       <nuxt-link to="/" class="cursor-pointer hover-anim-d">  خانه  </nuxt-link>
       <nuxt-link to="/" class="cursor-pointer hover-anim-d">  بازرگانان خارجی  </nuxt-link>
       <nuxt-link to="/" class="cursor-pointer hover-anim-d">  ارتباط با ما  </nuxt-link>
