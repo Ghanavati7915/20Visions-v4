@@ -70,7 +70,7 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
           <nuxt-link to="/" class="cursor-pointer">   دپارتمان شرکت  </nuxt-link>
           <nuxt-link to="/" class="cursor-pointer">  ارتباط با ما  </nuxt-link>
           <nuxt-link to="/" class="cursor-pointer">  درباره ما  </nuxt-link>
-          <nuxt-link to="/form" class="cursor-pointer hover-anim-d">  فرم  </nuxt-link>
+          <nuxt-link to="/survey/steel" class="cursor-pointer hover-anim-d">  فرم  </nuxt-link>
         </div>
         <!--------------------#endregion-------------------->
       </div>
@@ -171,6 +171,7 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
           <nuxt-link to="/" class="cursor-pointer hover-anim-d">  بازرگانان خارجی  </nuxt-link>
           <nuxt-link to="/" class="cursor-pointer hover-anim-d">  ارتباط با ما  </nuxt-link>
           <nuxt-link to="/" class="cursor-pointer hover-anim-d">  درباره ما  </nuxt-link>
+          <nuxt-link to="/survey/steel" class="cursor-pointer hover-anim-d">  فرم  </nuxt-link>
         </div>
         <!------------------#endregion------------------>
       </div>
