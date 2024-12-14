@@ -32,7 +32,6 @@ const updateTime = () => {
 
 const isMobileMenuOpen = ref<boolean>(false);
 
-
 //#region Constructors
 onMounted(async () => {
   calculateTodayDate()
@@ -51,11 +50,11 @@ const colorMode = useColorMode();
 const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ? 'dark' : 'light'))
 
 
-import {EffectCoverflow, Pagination} from 'swiper/modules';
+import {EffectCoverflow, Pagination, Autoplay} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-const modules = [EffectCoverflow, Pagination];
+const modules = [EffectCoverflow, Pagination, Autoplay];
 const coverflowEffect = {
   rotate: 50,
   stretch: 0,
@@ -257,8 +256,24 @@ let items:any[] = [{url:'/img/sample3.jpg'},{url:'/img/sample4.jpg'},{url:'/img/
       <div class="col-span-12 sm:col-span-5 p-2 ">
         <div class="bg-black text-white relative sm:h-[60vh] h-[30vh] rounded-3xl ">
           <!--#region building image-->
-          <img src="/img/sample1.jpg" alt="sample1" class="w-full h-full object-cover rounded-3xl border-solid border-4 border-black dark:border-white"><div>
-        </div>
+          <div id="left-top-carousel" class="">
+            <swiper
+                dir="rtl"
+                :pagination="true"
+                :autoplay="{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }"
+                :modules="modules"
+                class="mySwiper"
+            >
+              <swiper-slide> <img src="/img/sample1.jpg" alt="Image"> </swiper-slide>
+              <swiper-slide> <img src="/img/sample3.jpg" alt="Image"> </swiper-slide>
+              <swiper-slide> <img src="/img/sample4.jpg" alt="Image"> </swiper-slide>
+              <swiper-slide> <img src="/img/sample5.jpg" alt="Image"> </swiper-slide>
+              <swiper-slide> <img src="/img/sample6.jpg" alt="Image"> </swiper-slide>
+            </swiper>
+          </div>
           <!--#endregion-->
           <!--#region top black and white button-->
           <div class="bg-black rounded-full w-10 h-8 flex justify-center items-center absolute top-5 left-5">
@@ -381,21 +396,35 @@ let items:any[] = [{url:'/img/sample3.jpg'},{url:'/img/sample4.jpg'},{url:'/img/
   @apply transition-all duration-700;
 }
 
-.swiper {
-  width: 100vw;
-  padding-top: 10px;
-  padding-bottom: 50px;
-}
+</style>
 
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-  width: 300px;
-  height: 300px;
-}
 
-.swiper-slide img {
-  display: block;
+<style>
+#left-top-carousel {
+  @apply w-full h-full overflow-hidden rounded-3xl border-solid border-4 border-black dark:border-white;
+}
+#left-top-carousel .swiper {
   width: 100%;
+  height: 100%;
+}
+#left-top-carousel .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#left-top-carousel .swiper-slide img {
+  @apply h-full w-full object-cover rounded-3xl;
+  display: block;
+}
+#left-top-carousel .swiper-pagination{
+  @apply rounded-3xl bg-red-500 opacity-50 w-1/6;
+}
+#left-top-carousel .swiper-pagination-bullet-active {
+  background: #ffffff;
 }
 </style>
