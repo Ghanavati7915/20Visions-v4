@@ -1,4 +1,6 @@
 <script setup lang="ts">
+
+
 const emit = defineEmits(['onNext'])
 
 const form = ref<Object>({
@@ -48,9 +50,11 @@ const gotoNext = () => {
   if (!errorFlag) emit('onNext')
 }
 
+
 </script>
 
 <template>
+
   <div class="flex w-full max-w-sm mx-auto  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl  dir-rtl">
     <div class="hidden bg-cover lg:block lg:w-1/2" style="background-image: url('https://images.unsplash.com/photo-1606660265514-358ebbadc80d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1575&q=80');"></div>
 
@@ -114,8 +118,12 @@ const gotoNext = () => {
       </div>
     </div>
   </div>
+
+
 </template>
 
 <style scoped>
-
+.container {
+  max-width: 100%;
+}
 </style>

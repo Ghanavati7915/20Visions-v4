@@ -50,11 +50,26 @@ const colorMode = useColorMode();
 
 const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ? 'dark' : 'light'))
 
+
+import {EffectCoverflow, Pagination} from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+const modules = [EffectCoverflow, Pagination];
+const coverflowEffect = {
+  rotate: 50,
+  stretch: 0,
+  depth: 100,
+  modifier: 1,
+  slideShadows: true,
+}
+let items:any[] = [{url:'/img/sample3.jpg'},{url:'/img/sample4.jpg'},{url:'/img/sample5.jpg'}]
+
 </script>
 
 <template>
   <!--------------------#region Main-------------------->
-  <div class="w-screen sm:h-screen Estedad_FD_Light dir-rtl flex flex-col justify-around" :class="(colorMode.value == 'light') ? 'bg-light' : 'bg-dark'">
+  <div class="w-screen sm:min-h-screen Estedad_FD_Light dir-rtl flex flex-col justify-around" :class="(colorMode.value == 'light') ? 'bg-light' : 'bg-dark'">
     <!--------------------#region Navigation/Desktop-------------------->
     <div class="justify-between w-full h-10 px-2 pt-2 hidden sm:flex">
       <!--------------------#region Navigation-------------------->
@@ -80,13 +95,13 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
       <!--------------------#region Navigation Boxes-------------------->
       <div class="w-1/2 h-full flex justify-start dir-ltr">
         <!--------------------#region Navigation Language Piker-------------------->
-        <div class="bg-[#F7D904] rounded-full w-8 h-8 flex justify-center items-center">
+        <div class="bg-[#B40000] rounded-full w-8 h-8 flex justify-center items-center">
           <span>FA</span>
         </div>
         <!--------------------#endregion-------------------->
         <!--------------------#region Navigation Search Input-------------------->
         <div class="bg-[#D9D9D9] w-48 h-full ml-5 flex rounded-full">
-          <div class="bg-[#F7D904] rounded-full w-8 h-8 flex justify-center items-center">
+          <div class="bg-[#B40000] rounded-full w-8 h-8 flex justify-center items-center">
             <icon name="ic:baseline-search"  style="color: black" class="mx-1" />
           </div>
           <input type="text" placeholder="جستجو کنید..." class="bg-[#D9D9D9] w-full rounded-full dir-rtl px-2 placeholder-black">
@@ -149,7 +164,7 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
         <!------------------#endregion------------------>
         <!--------------------#region Navigation Search Input-------------------->
         <div class="bg-[#D9D9D9] mt-3 flex rounded-full">
-          <div class="bg-[#F7D904] rounded-full w-8 h-8 flex justify-center items-center">
+          <div class="bg-[#B40000] rounded-full w-16 h-10 flex justify-center items-center">
             <icon name="ic:baseline-search"  style="color: black" class="mx-1" />
           </div>
           <input type="text" placeholder="جستجو کنید..." class="bg-[#D9D9D9] w-full rounded-full dir-rtl px-2 placeholder-black">
@@ -189,8 +204,8 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
           <div class="w-full mb-5 flex items-center">
             <!--------------------#region Yellow and White Logo Box-------------------->
             <div class="w-8 h-8 flex">
-              <div class="bg-white w-1/2 h-full border-[#1E1E1E] border-l-2"></div>
-              <div class="bg-yellow-400 w-1/2 h-full "></div>
+              <div class="bg-white dark:bg-black w-1/2 h-full border-[#1E1E1E] dark:border-white border-l-2"></div>
+              <div class="bg-[#B40000] w-1/2 h-full "></div>
             </div>
             <!--------------------#endregion-------------------->
             <!--------------------#region Online Time Line-------------------->
@@ -238,9 +253,10 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
 
       <!--#region image box-->
       <div class="col-span-12 sm:col-span-5 p-2 ">
-        <div class="bg-black text-white relative sm:h-[60vh] h-[30vh] rounded-3xl">
+        <div class="bg-black text-white relative sm:h-[60vh] h-[30vh] rounded-3xl ">
           <!--#region building image-->
-          <img src="/img/sample1.jpg" alt="sample1" class="w-full h-full object-cover rounded-3xl">
+          <img src="/img/sample1.jpg" alt="sample1" class="w-full h-full object-cover rounded-3xl border-solid border-4 border-black dark:border-white"><div>
+        </div>
           <!--#endregion-->
           <!--#region top black and white button-->
           <div class="bg-black rounded-full w-10 h-8 flex justify-center items-center absolute top-5 left-5">
@@ -268,7 +284,56 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
     <div class=" w-full grid grid-cols-12">
       <!--------------------#region Blue Photo Slider-------------------->
       <div class="col-span-12 sm:col-span-7 p-2 w-full">
-        <div class="bg-gradient-to-r from-[#106ECE] to-[#0A83FD] text-white h-56  rounded-3xl"></div>
+        <div class="bg-gradient-to-r from-[#106ECE] to-[#0A83FD] text-white h-56  rounded-3xl">
+
+          <div id="default-carousel" class="relative w-full" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative h-56 overflow-hidden rounded-lg">
+              <!-- Item 1 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/img/Rectangle%2032.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+              <!-- Item 2 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/img/Rectangle%2038.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+              <!-- Item 3 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/img/Rectangle%2039.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+              <!-- Item 4 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/img/Rectangle%2041.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+              <!-- Item 5 -->
+              <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                <img src="/img/Rectangle%2040.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+              </div>
+            </div>
+            <!-- Slider indicators -->
+            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+              <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+              <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+              <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+              <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
+              <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+            </div>
+            <!-- Slider controls -->
+            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+           <Icon name="mdi-light:chevron-right" style="color: white" size="30"/>
+            <span class="sr-only">Previous</span>
+        </span>
+            </button>
+            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+           <Icon name="mdi-light:chevron-left" style="color: white" size="30"/>
+            <span class="sr-only">Next</span>
+        </span>
+            </button>
+          </div>
+
+        </div>
       </div>
       <!--------------------#endregion-------------------->
       <!--------------------#region Black Box-------------------->
@@ -300,8 +365,8 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
 </template>
 
 <style scoped>
-.hover-anim-l { @apply cursor-pointer transition-all duration-500 hover:-translate-y-1  hover:text-amber-400 text-white dark:text-black;}
-.hover-anim-d { @apply cursor-pointer transition-all duration-500 hover:-translate-y-1  hover:text-amber-400 text-black dark:text-white;}
+.hover-anim-l { @apply cursor-pointer transition-all duration-500 hover:-translate-y-1  hover:text-[#B40000] text-white dark:text-black;}
+.hover-anim-d { @apply cursor-pointer transition-all duration-500 hover:-translate-y-1  hover:text-[#B40000] text-black dark:text-white;}
 
 .bg-light {
   background-image: url('/img/bg-light.jpg');
@@ -312,5 +377,23 @@ const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ?
 }
 .anim {
   @apply transition-all duration-700;
+}
+
+.swiper {
+  width: 100vw;
+  padding-top: 10px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
 }
 </style>
