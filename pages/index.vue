@@ -62,7 +62,7 @@ const coverflowEffect = {
   modifier: 1,
   slideShadows: true,
 }
-let items:any[] = [{url:'/img/sample3.jpg'},{url:'/img/sample4.jpg'},{url:'/img/sample5.jpg'}]
+let items:any[] = [{url:'/img/sample5.jpg'},{url:'/img/sample6.jpg'},{url:'/img/sample7.jpg'}]
 
 </script>
 
@@ -253,8 +253,8 @@ let items:any[] = [{url:'/img/sample3.jpg'},{url:'/img/sample4.jpg'},{url:'/img/
       <!--------------------#endregion-------------------->
 
       <!--#region image box-->
-      <div class="col-span-12 sm:col-span-5 p-2 ">
-        <div class="bg-black text-white relative sm:h-[60vh] h-[30vh] rounded-3xl ">
+      <div class="col-span-12 sm:col-span-5 p-2">
+        <div class="bg-black text-white relative sm:h-[60vh] h-[30vh] rounded-3xl">
           <!--#region building image-->
           <div id="left-top-carousel" class="">
             <swiper
@@ -267,30 +267,20 @@ let items:any[] = [{url:'/img/sample3.jpg'},{url:'/img/sample4.jpg'},{url:'/img/
                 :modules="modules"
                 class="mySwiper"
             >
-              <swiper-slide> <img src="/img/sample1.jpg" alt="Image"> </swiper-slide>
-              <swiper-slide> <img src="/img/sample3.jpg" alt="Image"> </swiper-slide>
-              <swiper-slide> <img src="/img/sample4.jpg" alt="Image"> </swiper-slide>
-              <swiper-slide> <img src="/img/sample5.jpg" alt="Image"> </swiper-slide>
-              <swiper-slide> <img src="/img/sample6.jpg" alt="Image"> </swiper-slide>
+              <swiper-slide> <img src="/img/One.jpg" alt="Image"> </swiper-slide>
+              <swiper-slide> <img src="/img/Two.jpg" alt="Image"> </swiper-slide>
+              <swiper-slide> <img src="/img/Three.jpg" alt="Image"> </swiper-slide>
+              <swiper-slide> <img src="/img/Four.jpg" alt="Image"> </swiper-slide>
+              <swiper-slide> <img src="/img/Five.jpg" alt="Image"> </swiper-slide>
             </swiper>
           </div>
           <!--#endregion-->
           <!--#region top black and white button-->
-          <div class="bg-black rounded-full w-10 h-8 flex justify-center items-center absolute top-5 left-5">
+          <div class="bg-black rounded-full w-10 h-8 flex justify-center items-center absolute top-5 left-5 z-50">
             <div class="bg-white rounded-full sm:w-6 w-6 h-6 animate-pulse"></div>
           </div>
           <!--#endregion-->
-          <!--#region bottom pause button-->
-          <div class="backdrop-blur-md bg-white/30 rounded-full sm:w-12 w-8 h-8  flex justify-center items-center absolute bottom-5 left-5">
-            <Icon name="ph:pause-fill" style="color: white" />
-          </div>
-          <!--#endregion-->
-          <!--#region play button-->
-          <div class="backdrop-blur-md bg-white/30 rounded-full sm:w-28 w-20 h-8 flex justify-center items-center absolute bottom-5 left-20">
-            <Icon name="tabler:dots" style="color: white" size="30"/>
-            <Icon name="tabler:dots" style="color: white" size="30"/>
-          </div>
-          <!--#endregion-->
+
         </div>
       </div>
       <!--#endregion-->
@@ -303,52 +293,7 @@ let items:any[] = [{url:'/img/sample3.jpg'},{url:'/img/sample4.jpg'},{url:'/img/
       <div class="col-span-12 sm:col-span-7 p-2 w-full">
         <div class="bg-gradient-to-r from-[#106ECE] to-[#0A83FD] text-white h-56  rounded-3xl">
 
-          <div id="default-carousel" class="relative w-full" data-carousel="slide">
-            <!-- Carousel wrapper -->
-            <div class="relative h-56 overflow-hidden rounded-lg">
-              <!-- Item 1 -->
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="/img/Rectangle%2032.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-              </div>
-              <!-- Item 2 -->
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="/img/Rectangle%2038.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-              </div>
-              <!-- Item 3 -->
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="/img/Rectangle%2039.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-              </div>
-              <!-- Item 4 -->
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="/img/Rectangle%2041.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-              </div>
-              <!-- Item 5 -->
-              <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="/img/Rectangle%2040.png" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-              </div>
-            </div>
-            <!-- Slider indicators -->
-            <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-              <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-              <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-              <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-              <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-              <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
-            </div>
-            <!-- Slider controls -->
-            <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-           <Icon name="mdi-light:chevron-right" style="color: white" size="30"/>
-            <span class="sr-only">Previous</span>
-        </span>
-            </button>
-            <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-           <Icon name="mdi-light:chevron-left" style="color: white" size="30"/>
-            <span class="sr-only">Next</span>
-        </span>
-            </button>
-          </div>
+
 
         </div>
       </div>
@@ -421,10 +366,12 @@ let items:any[] = [{url:'/img/sample3.jpg'},{url:'/img/sample4.jpg'},{url:'/img/
   @apply h-full w-full object-cover rounded-3xl;
   display: block;
 }
-#left-top-carousel .swiper-pagination{
-  @apply rounded-3xl bg-red-500 opacity-50 w-1/6;
+
+#left-top-carousel .swiper-pagination {
+  @apply rounded-3xl bg-[#fefefe] opacity-50 w-1/5 h-8 left-20 flex items-center justify-center z-50;
 }
 #left-top-carousel .swiper-pagination-bullet-active {
-  background: #ffffff;
+  background: #1e1e1e;
 }
+
 </style>
