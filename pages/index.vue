@@ -50,11 +50,12 @@ const colorMode = useColorMode();
 const changeColor = () => (colorMode.preference = (colorMode.value === 'light' ? 'dark' : 'light'))
 
 
-import {EffectCoverflow, Pagination, Autoplay} from 'swiper/modules';
+import {EffectCoverflow, Pagination, Autoplay , Navigation} from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
-const modules = [EffectCoverflow, Pagination, Autoplay];
+import 'swiper/css/navigation';
+const modules = [EffectCoverflow, Pagination, Autoplay , Navigation ];
 const coverflowEffect = {
   rotate: 50,
   stretch: 0,
@@ -109,16 +110,16 @@ let items:any[] = [{url:'/img/sample5.jpg'},{url:'/img/sample6.jpg'},{url:'/img/
         <!--------------------#endregion-------------------->
         <!--------------------#region Navigation Icons Box-------------------->
         <div class="h-full p-2 ml-5 flex rounded-full bg-black dark:bg-white ">
-          <icon :name="(colorMode.value == 'dark') ? 'ph:moon-stars-fill' : 'ph:sun-fill' "  @click="changeColor" class="mx-1 hover-anim-l text:text-steel-800 dark:white" />
-          <icon name="icon-park-twotone:voice"  class="mx-1 hover-anim-l "  />
-          <icon name="ph:lightbulb-fill" class="mx-1 hover-anim-l    " />
+          <icon :name="(colorMode.value == 'dark') ? 'solar:moon-fog-bold-duotone' : 'solar:sun-fog-bold-duotone' "  @click="changeColor" class="mx-1 hover-anim-l text:text-steel-800 dark:white" />
+          <icon name="solar:microphone-2-bold-duotone"  class="mx-1 hover-anim-l "  />
+          <icon name="solar:lightbulb-bold-duotone" class="mx-1 hover-anim-l    " />
           <icon name="mage:whatsapp-filled" class="mx-1 hover-anim-l " />
           <icon name="ic:outline-telegram"  class="mx-1 hover-anim-l " />
         </div>
         <!--------------------#endregion-------------------->
         <!--------------------#region Navigation Weather Box-------------------->
         <div class="bg-black dark:bg-white rounded-full w-8 h-8 ml-5 flex justify-center items-center ">
-          <icon name="fluent:weather-partly-cloudy-day-48-filled" :style="`color:${(colorMode.value == 'light') ? 'white' : 'black'}`" class="mx-1" />
+          <icon name="solar:user-rounded-bold-duotone" :style="`color:${(colorMode.value == 'light') ? 'white' : 'black'}`" class="mx-1" />
         </div>
         <!--------------------#endregion-------------------->
       </div>
@@ -205,8 +206,8 @@ let items:any[] = [{url:'/img/sample5.jpg'},{url:'/img/sample6.jpg'},{url:'/img/
           <div class="w-full mb-5 flex items-center">
             <!--------------------#region Yellow and White Logo Box-------------------->
             <div class="w-8 h-8 flex">
-              <div class="bg-white dark:bg-black w-1/2 h-full border-[#1E1E1E] dark:border-white border-l-2"></div>
-              <div class="bg-[#B40000] w-1/2 h-full "></div>
+              <div class="anim1 bg-white dark:bg-black w-1/2 h-full border-[#1E1E1E] dark:border-white border-l-2"></div>
+              <div class="anim2 bg-[#B40000] w-1/2 h-full "></div>
             </div>
             <!--------------------#endregion-------------------->
             <!--------------------#region Online Time Line-------------------->
@@ -261,23 +262,29 @@ let items:any[] = [{url:'/img/sample5.jpg'},{url:'/img/sample6.jpg'},{url:'/img/
                 dir="rtl"
                 :pagination="true"
                 :autoplay="{
-                  delay: 2500,
+                  delay: 3500,
                   disableOnInteraction: false,
+
                 }"
                 :modules="modules"
                 class="mySwiper"
             >
               <swiper-slide> <img src="/img/One.jpg" alt="Image"> </swiper-slide>
               <swiper-slide> <img src="/img/Two.jpg" alt="Image"> </swiper-slide>
-              <swiper-slide> <img src="/img/Three.jpg" alt="Image"> </swiper-slide>
-              <swiper-slide> <img src="/img/Four.jpg" alt="Image"> </swiper-slide>
-              <swiper-slide> <img src="/img/Five.jpg" alt="Image"> </swiper-slide>
+              <swiper-slide> <img src="/img/Two.jpg" alt="Image"> </swiper-slide>
+              <swiper-slide> <img src="/img/Two.jpg" alt="Image"> </swiper-slide>
             </swiper>
           </div>
           <!--#endregion-->
           <!--#region top black and white button-->
           <div class="bg-black rounded-full w-10 h-8 flex justify-center items-center absolute top-5 left-5 z-50">
             <div class="bg-white rounded-full sm:w-6 w-6 h-6 animate-pulse"></div>
+          </div>
+          <!--#endregion-->
+
+          <!--#region Pause and play button-->
+          <div class="pause">
+            <Icon name="carbon-pause-filled"></Icon>
           </div>
           <!--#endregion-->
 
@@ -291,9 +298,60 @@ let items:any[] = [{url:'/img/sample5.jpg'},{url:'/img/sample6.jpg'},{url:'/img/
     <div class=" w-full grid grid-cols-12">
       <!--------------------#region Blue Photo Slider-------------------->
       <div class="col-span-12 sm:col-span-7 p-2 w-full">
-        <div class="bg-gradient-to-r from-[#106ECE] to-[#0A83FD] text-white h-56  rounded-3xl">
+        <div id="bluebox" class="bg-gradient-to-r from-[#106ECE] to-[#0A83FD] text-white h-56  rounded-3xl">
+
+          <swiper
+              :effect="'coverflow'"
+              :grabCursor="true"
+              :centeredSlides="true"
+              :slidesPerView="'auto'"
+              :coverflowEffect="{
+      rotate: 40,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    }"
+              :pagination="true"
+              :navigation="true"
+              :cssMode="true"
+              :modules="modules"
+              class="mySwiper"
+          >
+            <swiper-slide>
+              <img src="/img/One.jpg" />
+            </swiper-slide>
+
+            <swiper-slide>
+            <img src="/img/Two.jpg" />
+          </swiper-slide>
+
+            <swiper-slide>
+            <img src="/img/One.jpg" />
+            </swiper-slide>
+
+            <swiper-slide>
+              <img src="/img/One.jpg" />
+            </swiper-slide>
+
+            <swiper-slide>
+              <img src="/img/One.jpg" />
+            </swiper-slide>
+
+            <swiper-slide>
+              <img src="/img/One.jpg" />
+            </swiper-slide>
+
+            <swiper-slide>
+              <img src="/img/One.jpg" />
+            </swiper-slide>
+
+            <swiper-slide>
+              <img src="/img/One.jpg" />
+            </swiper-slide>
 
 
+          </swiper>
 
         </div>
       </div>
@@ -363,15 +421,80 @@ let items:any[] = [{url:'/img/sample5.jpg'},{url:'/img/sample6.jpg'},{url:'/img/
   align-items: center;
 }
 #left-top-carousel .swiper-slide img {
-  @apply h-full w-full object-cover rounded-3xl;
+  @apply h-full w-full object-cover;
+  display: block;
+}
+
+#left-top-carousel .swiper-slide {
+  @apply rounded-3xl;
   display: block;
 }
 
 #left-top-carousel .swiper-pagination {
-  @apply rounded-3xl bg-[#fefefe] opacity-50 w-1/5 h-8 left-20 flex items-center justify-center z-50;
+  @apply rounded-3xl bg-[#fefefe] opacity-50 w-1/5 h-10 left-20 flex items-center justify-center z-50;
 }
 #left-top-carousel .swiper-pagination-bullet-active {
   background: #1e1e1e;
 }
+#bluebox .swiper {
+  @apply w-full py-5 ;
+}
+#bluebox .swiper-slide {
+  @apply w-40 h-full ;
+}
 
+#bluebox .swiper-slide img {
+  @apply block w-40 h-40 object-cover;
+}
+.pause {
+  @apply rounded-3xl bg-[#fefefe] opacity-50 w-10 h-10 left-5 flex items-center justify-center z-50 absolute bottom-3.5 text-black;
+}
+.swiper-button-prev, .swiper-button-next {
+  color: #fefefe;
+}
+
+@keyframes animation1 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  35% {
+    transform: translate(0, 10px);
+  }
+
+  70% {
+    transform: translate(0, -5px);
+  }
+
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes animation2 {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  35% {
+    transform: translate(0, -10px);
+  }
+
+  70% {
+    transform: translate(0, 5px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.anim1 {
+  animation: 4s ease-in-out infinite  animation1;
+}
+
+.anim2 {
+  animation: 4s ease-in-out infinite  animation2;
+}
 </style>
