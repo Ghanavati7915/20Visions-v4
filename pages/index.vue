@@ -69,7 +69,7 @@ let items:any[] = [{url:'/img/sample5.jpg'},{url:'/img/sample6.jpg'},{url:'/img/
 
 <template>
   <!--------------------#region Main-------------------->
-  <div class="w-screen sm:min-h-screen Estedad_FD_Light dir-rtl flex flex-col justify-around" :class="(colorMode.value == 'light') ? 'bg-light' : 'bg-dark'">
+  <div class="w-screen h-screen  Estedad_FD_Light dir-rtl flex flex-col justify-around" :class="(colorMode.value == 'light') ? 'bg-light' : 'bg-dark'">
     <!--------------------#region Navigation/Desktop-------------------->
     <div class="justify-between w-full h-10 px-2 pt-2 hidden sm:flex">
       <!--------------------#region Navigation-------------------->
@@ -113,8 +113,8 @@ let items:any[] = [{url:'/img/sample5.jpg'},{url:'/img/sample6.jpg'},{url:'/img/
           <icon :name="(colorMode.value == 'dark') ? 'solar:moon-fog-bold-duotone' : 'solar:sun-fog-bold-duotone' "  @click="changeColor" class="mx-1 hover-anim-l text-gray-700 dark:text-[#fefefe]" />
           <icon name="solar:microphone-2-bold-duotone"  class="mx-1 hover-anim-l "  />
           <icon name="solar:lightbulb-bold-duotone" class="mx-1 hover-anim-l    " />
-          <icon name="mage:whatsapp-filled" class="mx-1 hover-anim-l " />
-          <icon name="ic:outline-telegram"  class="mx-1 hover-anim-l " />
+          <icon name="stash:social-whatsapp-duotone" class="mx-1 hover-anim-l " />
+          <icon name="uim:telegram"  class="mx-1 hover-anim-l " />
         </div>
         <!--------------------#endregion-------------------->
         <!--------------------#region Navigation Weather Box-------------------->

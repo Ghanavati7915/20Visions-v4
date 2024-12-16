@@ -14,7 +14,7 @@ const changeDiv = (divName: "info" | "products" | "question" | "finish") => {
 </script>
 
 <template>
-  <div class="w-screen h-screen bg-gray-300 grid items-center dir-rtl Estedad_FD_Light text-xs">
+  <div class="bg-[#E6E6E6] grid items-center dir-rtl Estedad_FD_Light text-xs">
 
     <!--------------------#region Info-------------------->
     <SurveyKimiaStepInfo v-if="activeDiv === 'info'" @onNext="changeDiv('products')"/>
@@ -32,12 +32,12 @@ const changeDiv = (divName: "info" | "products" | "question" | "finish") => {
     <SurveyKimiaStepFinish v-if="activeDiv === 'finish'"/>
     <!--------------------#endregion-------------------->
 
-    <div class="logoHolder">
+<!--    <div class="logoHolder">
       <div class="logo">
         <img class="w-full h-full" src="/public/favicon.ico" alt="logo">
       </div>
       <span class="text-xs logoText"> تجارت الکترونیک 20 آفاق ایرانیان </span>
-    </div>
+    </div>-->
   </div>
 </template>
 

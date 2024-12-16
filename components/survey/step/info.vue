@@ -24,7 +24,7 @@ const gotoNext = () => {
 
       <div class="flex items-center justify-center text-center ">
             <span class="text-sm text-center text-gray-600 dark:text-gray-400 Estedad_FD_Light">
-               از شرکت کیمیا بابت زمانی که برای پاسخ به سوالات ما اختصاص می‌دهید، صمیمانه سپاسگزاری می‌نماییم.
+              فرم استیل
             </span>
       </div>
 
