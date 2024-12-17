@@ -2,12 +2,12 @@
 
 //#region Variables
 // Track the active div
-const activeDiv = ref("info"); // Default to the 'info' div
+const activeDiv = ref("step1"); // Default to the 'info' div
 const productList = ref<any[]>([]);
 //#endregion
 
 //#region Functions
-const changeDiv = (divName: "info" | "products" | "question" | "finish") => {
+const changeDiv = (divName: string) => {
   activeDiv.value = divName;
 };
 //#endregion
@@ -17,16 +17,26 @@ const changeDiv = (divName: "info" | "products" | "question" | "finish") => {
   <div class="bg-[#E6E6E6] grid items-center dir-rtl Estedad_FD_Light text-xs">
 
     <!--------------------#region Info-------------------->
-    <SurveyKimiaStepInfo v-if="activeDiv === 'info'" @onNext="changeDiv('products')"/>
+    <SurveyKimiaStepStep1 v-if="activeDiv === 'step1'" @onNext="changeDiv('step2')"/>
     <!--------------------#endregion-------------------->
 
-    <!--------------------#region login-------------------->
+    <!--------------------#region Info-------------------->
+    <SurveyKimiaStepStep2 v-if="activeDiv === 'step2'" @onNext="changeDiv('step3')"  @onList="(data:any)=>{productList = data}"/>
+    <!--------------------#endregion-------------------->
+
+    <!--------------------#region Info-------------------->
+    <SurveyKimiaStepStep3  v-if="activeDiv === 'step3'" @onNext="changeDiv('step4')"/>
+    <!--------------------#endregion-------------------->
+
+<!--
+    &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;#region login&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
     <SurveyKimiaStepProducts v-if="activeDiv === 'products'" @onNext="changeDiv('question')" @onList="(data:any)=>{productList = data}"/>
-    <!--------------------#endregion-------------------->
+    &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;#endregion&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
 
-    <!--------------------#region questions-------------------->
+    &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;#region questions&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
     <SurveyKimiaStepQuestions v-if="activeDiv === 'question'" :items="productList" @onNext="changeDiv('finish')"/>
-    <!--------------------#endregion-------------------->
+    &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;#endregion&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
+-->
 
     <!--------------------#region finish-------------------->
     <SurveyKimiaStepFinish v-if="activeDiv === 'finish'"/>

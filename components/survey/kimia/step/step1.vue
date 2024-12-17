@@ -33,9 +33,13 @@ const gotoNext = () => {
                 </p>
               </div>
 
-              <div class="flex items-center justify-center text-center mt-12">
-            <span class="text-sm text-center text-gray-800 dark:text-gray-500 Estedad_FD_Light">
-از همکاری ارزشمند و تعامل سازنده جنابعالی و تیم حرفه‌ای شرکت کیمیا با مجموعه تجارت الکترونیک 20 آفاق، صمیمانه تقدیر و تشکر می‌کنیم.            </span>
+              <div class="flex flex-col items-center justify-center text-center mt-12">
+            <span class="text-sm text-justify text-gray-800 dark:text-gray-500 Estedad_FD_Light leading-6">
+از همکاری ارزشمند و تعامل سازنده جنابعالی و تیم حرفه‌ای شرکت کیمیا با مجموعه تجارت الکترونیک 20 آفاق، صمیمانه تقدیر و تشکر می‌کنیم.
+            </span>
+                <span class="text-sm text-justify text-gray-800 dark:text-gray-500 Estedad_FD_Light leading-6 mt-5">
+                  پرسشنامه پیش‌رو در رابطه با حوزه کاری، محصولات و خدمات ارائه‌شده توسط شرکت کیمیا می‌باشد. به منظور ایجاد تعامل بیشتر و دستیابی به تعریفی مشترک از مفاهیم تخصصی، خواهشمند است این پرسشنامه را با دقت تکمیل فرمایید.
+                </span>
               </div>
 
 

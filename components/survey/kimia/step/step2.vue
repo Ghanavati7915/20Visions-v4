@@ -20,7 +20,7 @@ let items = ref<any[]>([
     price:'',
     howToSettle:''
   },
-    {
+  {
     id:2,
     text:'ضایعات روغنی فله',
     value:'ضایعات روغنی فله',
@@ -464,81 +464,7 @@ const gotoNext = () => {
 <template>
   <div class="flex w-full max-w-sm mx-auto  overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl  dir-rtl">
     <div class="w-full px-4 py-8 md:px-8 lg:w-full">
-      <div class="sm:flex sm:items-center sm:justify-between">
-        <h2 class="text-lg font-medium text-gray-800 dark:text-white"> ضایعات </h2>
 
-        <div class="flex items-center mt-4 gap-x-3">
-          <button class="w-1/2 px-5 py-2 text-sm text-gray-800 transition-colors duration-200 bg-white border rounded-lg sm:w-auto dark:hover:bg-gray-800 dark:bg-gray-900 hover:bg-gray-100 dark:text-white dark:border-gray-700">
-            <span> ثبت </span>
-          </button>
-
-          <button class="flex items-center justify-center w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-[#cc3333] rounded-lg sm:w-auto gap-x-2 hover:bg-[#D55858] dark:hover:bg-[#D55858] dark:bg-[#942525]">
-            <span> ویرایش </span>
-            <Icon name="solar:clapperboard-edit-bold-duotone"></Icon>
-          </button>
-        </div>
-      </div>
-
-      <div class="flex flex-col mt-6">
-        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-            <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
-              <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-                <thead class="bg-gray-50 dark:bg-gray-800">
-                <tr>
-                  <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-[#1e1e1e] dark:text-gray-500 Estedad_FD_Bold">
-                    <div class="flex items-center gap-x-3">
-                      <span> نام محصول </span>
-                    </div>
-                  </th>
-
-                  <th scope="col" class="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-[#1e1e1e] dark:text-gray-500 Estedad_FD">
-                    سایر فایل
-                  </th>
-
-                  <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-[#1e1e1e] dark:text-gray-500 Estedad_FD">
-                    تاریخ بارگذاری
-                  </th>
-
-                  <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-[#1e1e1e] dark:text-gray-500 Estedad_FD">
-                    آخرین به روز رسانی
-                  </th>
-
-                  <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-[#1e1e1e] dark:text-gray-500 Estedad_FD">
-                    بارگذاری شده توسط
-                  </th>
-                </tr>
-                </thead>
-                <tbody class="bg-[#fefefe] divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
-                <tr>
-                  <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
-                    <div class="inline-flex items-center gap-x-3">
-                      <input type="checkbox" class="text-[#cc3333] border-red-300 rounded dark:bg-red-900 dark:ring-offset-red-900 dark:border-red-700">
-                      <div class="flex items-center gap-x-2">
-                        <div class="flex items-center justify-center w-8 h-8 text-[#cc3333] bg-red-100 rounded-full dark:bg-red-800">
-                          <Icon name="basil:file-solid" width="80" height="80"></Icon>
-                        </div>
-
-                        <div>
-                          <h2 class="font-normal text-gray-800 dark:text-[#fefefe] Estedad_FD_Light"> ضایعات آهن آلیاژی </h2>
-                          <p class="text-xs font-normal text-gray-500 dark:text-gray-400">200 KB</p>
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td class="px-12 py-4 text-sm font-normal text-gray-700 whitespace-nowrap">
-                    200 KB
-                  </td>
-                  <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap  Estedad_FD_Light"> 1403/1/6 </td>
-                  <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap  Estedad_FD_Light"> 1403/2/6 </td>
-                  <td class="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap  Estedad_FD_Light"> نرجس مقدم </td>
-                </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <section class="container px-4 mx-auto">
         <hr class="border-black my-16">

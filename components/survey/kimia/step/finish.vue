@@ -20,7 +20,6 @@ const gotoNext = () => {
         </div>
       </div>
 
-
       <div class="w-full px-6 py-8 md:px-8 lg:w-1/3 h-full flex items-center justify-center text-center">
         <div class="bg-[#fefefe] w-full p-8 rounded-xl">
           <div class="flex items-center justify-center text-center">
@@ -39,14 +38,13 @@ const gotoNext = () => {
             </span>
           </div>
 
-
-<!--          <div class="mt-6">
+          <div class="mt-6">
             <button class="w-full px-6 py-3 text-sm font-medium tracking-wide text-[#fefefe] capitalize transition-colors
                 duration-300 transform bg-gray-800 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring
                 focus:ring-gray-300 focus:ring-opacity-50 cursor-pointer hover-anim-d" @click="gotoNext">
-              شروع
+              پایان
             </button>
-          </div>-->
+          </div>
         </div>
       </div>
 

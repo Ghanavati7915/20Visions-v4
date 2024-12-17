@@ -173,7 +173,7 @@ let items:any[] = [{url:'/img/sample5.jpg'},{url:'/img/sample6.jpg'},{url:'/img/
         <!--------------------#endregion-------------------->
         <!--------------------#region Navigation Icons Box-------------------->
         <div class="p-2 w-full mt-4 flex justify-around items-center rounded-full bg-[#1e1e1e] dark:bg-[#fefefe] ">
-          <icon :name="(colorMode.value == 'dark') ? 'ph:moon-stars-fill' : 'ph:sun-fill' "  @click="changeColor" class="mx-1 hover-anim-l text:text-steel-800 dark:white" />
+          <icon :name="(colorMode.value == 'dark') ? 'solar:cloudy-moon-bold-duotone' : 'tabler:sun-filled' "  @click="changeColor" class="mx-1 hover-anim-l text:text-steel-800 dark:white" />
           <icon name="ph:music-notes-fill"  class="mx-1 hover-anim-l "  />
           <icon name="ph:lightbulb-fill" class="mx-1 hover-anim-l    " />
           <icon name="mage:whatsapp-filled" class="mx-1 hover-anim-l " />
