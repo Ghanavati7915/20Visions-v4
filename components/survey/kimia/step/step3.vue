@@ -1,4 +1,10 @@
-<script setup lang="ts">
+<script setup lang="ts" xmlns="http://www.w3.org/1999/html">
+
+const emit = defineEmits(['onNext'])
+
+const gotoNext = () => {
+  emit('onNext')
+}
 
 const form = ref<any>({
   title : '',
@@ -30,25 +36,75 @@ const selectRow = (item:any)=>{
         همکار گرامی در صورت تمایل میتوانید با انتخاب هر کدام از محصولات زیر اطلاعات آن را ویرایش و تکمیل نمایید.
     </div>
 
+<!--------------------#region Form-------------------->
+    <div class="flex flex-col mt-6 justify-around">
 
-    <div class="flex flex-col mt-6">
-      <div class="bg-white rounded-sm flex gap-3 p-4 items-center justify-center">
+      <div class="bg-white rounded-sm flex gap-3 p-4 items-center justify-around">
         <div>
-          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="email">عنوان</label>
-          <input v-model="form.title" class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" placeholder="mail@example.com" name="email" />
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="text">عنوان</label>
+          <input v-model="form.title" class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" name="text" />
         </div>
 
         <div>
-          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="email">قیمت</label>
-          <input v-model="form.pay" class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" placeholder="mail@example.com" name="email" />
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="text">قیمت</label>
+          <input v-model="form.pay" class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" name="text" />
         </div>
 
         <div>
-          <button class="ring-offset-background focus-visible:ring-ring flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-black/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" type="submit">Login</button>
+          <button class="ring-offset-background focus-visible:ring-ring flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-[#1e1e1e] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1e1e1e]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" type="submit"> ثبت </button>
         </div>
-
       </div>
 
+      <div class="bg-gray-200 rounded-sm flex gap-3 p-4 items-center justify-around">
+        <div>
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="text">عنوان</label>
+          <input v-model="form.title" class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" name="text" />
+        </div>
+
+        <div>
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="text">قیمت</label>
+          <input v-model="form.pay" class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" name="text" />
+        </div>
+
+        <div>
+          <button class="ring-offset-background focus-visible:ring-ring flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-[#1e1e1e] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1e1e1e]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" type="submit"> ثبت </button>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-sm flex gap-3 p-4 items-center justify-around">
+        <div>
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="text">عنوان</label>
+          <input v-model="form.title" class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" name="text" />
+        </div>
+
+        <div>
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="text">قیمت</label>
+          <input v-model="form.pay" class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" name="text" />
+        </div>
+
+        <div>
+          <button class="ring-offset-background focus-visible:ring-ring flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-[#1e1e1e] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1e1e1e]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" type="submit"> ثبت </button>
+        </div>
+      </div>
+
+      <div class="bg-gray-200 rounded-sm flex gap-3 p-4 items-center justify-around">
+        <div>
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="text">عنوان</label>
+          <input v-model="form.title" class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" name="text" />
+        </div>
+
+        <div>
+          <label class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70" for="text">قیمت</label>
+          <input v-model="form.pay" class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50" id="email" name="text" />
+        </div>
+
+        <div>
+          <button class="ring-offset-background focus-visible:ring-ring flex h-10 w-full items-center justify-center whitespace-nowrap rounded-md bg-[#1e1e1e] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1e1e1e]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" type="submit"> ثبت </button>
+        </div>
+      </div>
+
+    </div>
+    <!--------------------#endregion-------------------->
 
       <!-- component -->
       <!-- Main container -->
@@ -64,17 +120,14 @@ const selectRow = (item:any)=>{
                 <div class="space-y-1">
                   <div class="space-y-2">
                     <!-- Email label and input field -->
-
                   </div>
                 </div>
                 <!-- Login button -->
-
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
 
     <div class="flex flex-col mt-6">
@@ -104,8 +157,8 @@ const selectRow = (item:any)=>{
                 </th>
               </tr>
               </thead>
-              <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
 
+              <tbody class="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
               <tr class="hover:bg-slate-200 cursor-pointer" v-for="(item , i) in items" :key="`table_${i}`" @dblclick="selectRow(item)">
                 <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
                   <h2 class="font-normal text-gray-800 dark:text-white ">{{item.title}}</h2>
@@ -119,8 +172,8 @@ const selectRow = (item:any)=>{
                   </button>
                 </td>
               </tr>
-
               </tbody>
+
             </table>
           </div>
         </div>
@@ -128,19 +181,23 @@ const selectRow = (item:any)=>{
     </div>
 
     <div class="flex items-center justify-between mt-6">
-      <a href="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
-        <Icon name="solar:arrow-right-bold-duotone" width="24" height="24" />
+      <div class="flex items-center px-5 py-2 text-sm text-white capitalize transition-colors duration-200
+       bg-[#1e1e1e] border rounded-md gap-x-2 hover:bg-text-white dark:bg-text-white dark:text-text-white dark:border-text-white
+        dark:hover:bg-text-white cursor-pointer">
+        <Icon name="solar:arrow-right-bold-duotone" width="30" height="30" />
         <span>
                 قبلی
             </span>
-      </a>
+      </div>
 
-      <a href="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
+      <div class="flex items-center px-5 py-2 text-sm text-white capitalize transition-colors duration-200
+       bg-[#1e1e1e] border rounded-md gap-x-2 hover:bg-text-white dark:bg-text-white dark:text-text-white dark:border-text-white
+        dark:hover:bg-text-white cursor-pointer" @click="gotoNext">
             <span>
                 بعدی
             </span>
-        <Icon name="solar:arrow-left-bold-duotone" width="24" height="24" />
-      </a>
+        <Icon name="solar:arrow-left-bold-duotone" width="30" height="30" />
+      </div>
     </div>
   </section>
 </template>

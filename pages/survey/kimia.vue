@@ -20,27 +20,22 @@ const changeDiv = (divName: string) => {
     <SurveyKimiaStepStep1 v-if="activeDiv === 'step1'" @onNext="changeDiv('step2')"/>
     <!--------------------#endregion-------------------->
 
-    <!--------------------#region Info-------------------->
+    <!--------------------#region Properties-------------------->
     <SurveyKimiaStepStep2 v-if="activeDiv === 'step2'" @onNext="changeDiv('step3')"  @onList="(data:any)=>{productList = data}"/>
     <!--------------------#endregion-------------------->
 
-    <!--------------------#region Info-------------------->
+    <!--------------------#region editing-------------------->
     <SurveyKimiaStepStep3  v-if="activeDiv === 'step3'" @onNext="changeDiv('step4')"/>
     <!--------------------#endregion-------------------->
 
-<!--
-    &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;#region login&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
-    <SurveyKimiaStepProducts v-if="activeDiv === 'products'" @onNext="changeDiv('question')" @onList="(data:any)=>{productList = data}"/>
-    &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;#endregion&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
+    <!------------------#region Questions------------------>
+    <SurveyKimiaStepStep4 v-if="activeDiv === 'step4'" @onNext="changeDiv('step5')" @onList="(data:any)=>{productList = data}"/>
+    <!------------------#endregion------------------>
 
-    &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;#region questions&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
-    <SurveyKimiaStepQuestions v-if="activeDiv === 'question'" :items="productList" @onNext="changeDiv('finish')"/>
-    &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;#endregion&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;
--->
-
-    <!--------------------#region finish-------------------->
-    <SurveyKimiaStepFinish v-if="activeDiv === 'finish'"/>
+    <!------------------#region finish-------------------->
+    <SurveyKimiaStepStep5 v-if="activeDiv === 'step5'"/>
     <!--------------------#endregion-------------------->
+
 
 <!--    <div class="logoHolder">
       <div class="logo">

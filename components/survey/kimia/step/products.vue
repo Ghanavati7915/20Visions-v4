@@ -20,7 +20,7 @@ let items = ref<any[]>([
     price:'',
     howToSettle:''
   },
-    {
+  {
     id:2,
     text:'ضایعات روغنی فله',
     value:'ضایعات روغنی فله',

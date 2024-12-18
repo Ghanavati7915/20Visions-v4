@@ -467,8 +467,6 @@ const gotoNext = () => {
 
 
       <section class="container px-4 mx-auto">
-        <hr class="border-black my-16">
-
         <div class="mt-4">
           <p class="mt-3 text-lg text-center text-gray-600 dark:text-gray-200 Estedad_FD_Bold leading-7">
             همکار گرامی ؛ خواهشمندیم محصولاتی که در حوزه فعالیت شما هستند را انتخاب کرده و در صورتی که جزو موارد زیر نمی باشند ، آنها را اضافه نمایید.
