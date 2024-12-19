@@ -63,7 +63,7 @@ const coverflowEffect = {
   modifier: 1,
   slideShadows: true,
 }
-let items:any[] = [{url:'/img/sample5.jpg'},{url:'/img/sample6.jpg'},{url:'/img/sample7.jpg'}]
+let items:any[] = [{url:'/img/main2'},{url:'/img/main3'},{url:'/img/sample7.jpg'}]
 
 </script>
 

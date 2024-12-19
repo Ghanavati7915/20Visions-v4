@@ -2,6 +2,8 @@
 
 const emit = defineEmits(['onNext'])
 
+const prop =  defineProps(['items'])
+
 const gotoNext = () => {
   emit('onNext')
 }
@@ -13,13 +15,6 @@ const form = ref<any>({
   pay : '',
 })
 
-const items = ref<any>([
-  {id : 1 , title : 'A' , price :1000, pay : '' , description : ''},
-  {id : 2 , title : 'B' , price : 2000 , pay : '' , description : ''},
-  {id : 3 , title : 'C' , price :3000, pay : '' , description : ''},
-  {id : 4 , title : 'D' , price : 4000 , pay : '' , description : ''},
-])
-
 const selectRow = (item:any)=>{
   console.log('index   : ' , item)
   form.value.title = item.title
@@ -27,6 +22,8 @@ const selectRow = (item:any)=>{
   form.value.pay =item.pay
   form.value.description = item.description
 }
+
+
 
 </script>
 

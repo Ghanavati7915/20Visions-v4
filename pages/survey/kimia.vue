@@ -25,11 +25,11 @@ const changeDiv = (divName: string) => {
     <!--------------------#endregion-------------------->
 
     <!--------------------#region editing-------------------->
-    <SurveyKimiaStepStep3  v-if="activeDiv === 'step3'" @onNext="changeDiv('step4')"/>
+    <SurveyKimiaStepStep3  v-if="activeDiv === 'step3'" @onNext="changeDiv('step4')" :items="productList" @onList="(data:any)=>{productList = data}"/>
     <!--------------------#endregion-------------------->
 
     <!------------------#region Questions------------------>
-    <SurveyKimiaStepStep4 v-if="activeDiv === 'step4'" @onNext="changeDiv('step5')" @onList="(data:any)=>{productList = data}"/>
+    <SurveyKimiaStepStep4 v-if="activeDiv === 'step4'" @onNext="changeDiv('step5')" @onList="(data:any)=>{productList = data}" :items="productList" />
     <!------------------#endregion------------------>
 
     <!------------------#region finish-------------------->
